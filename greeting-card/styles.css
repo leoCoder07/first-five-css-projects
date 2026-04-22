@@ -103,10 +103,11 @@ li {
  display: block;
  text-decoration: none;
  text-align: center;
+ font-size: 1rem;
  border-radius: 10px;
  color: darkgreen;
  background-color: hsl(60, 100%, 50%);
- width: 25%;
+ width: 150px;
  padding: 10px;
  margin: 10px auto 0 auto;
 }
