@@ -25,6 +25,7 @@ header {
  border-radius: 10px;
  background: radial-gradient(ellipse at top right, hsl(50, 65%, 70%), hsl(75, 65%, 50%));
  margin: 10px auto;
+ box-shadow: 3px 3px 10px rgba(0, 80, 0, 0.5);
 }
 
 li {
