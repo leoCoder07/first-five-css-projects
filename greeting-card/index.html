@@ -11,22 +11,35 @@
 <body>
 
  <header>
-  <h1>Leo's Greeting Card</h1>
-  <p>My simple CSS project for creating greeting card.</p>
+  <h1 class="center">Leo's Greeting Card</h1>
+  <p class="center">My simple CSS project for creating greeting card.</p>
  </header>
 
  <main>
   <div class="card-box">
-   <img src="me.webp" alt="image of me">
-   <h2>Happy Birthday! 🥳</h2>
-   <p>Hi, I want to greet you a Happy Birthday! More birthdays to come and always be happy.</p>
+   <img class="img-of-me" src="me.webp" alt="image of me">
+   <h2 class="center">Happy Birthday! 🥳</h2>
+   <p class="center">Hi, I want to greet you a Happy Birthday! More birthdays to come and always be happy.</p>
    <div class="solid-line"></div>
    <div class="input-message-box">
-    <label for="message">Message me:</label>
-    <textarea name="message" id="message"></textarea>
+    <form>
+     <label for="message">Message me:</label>
+     <textarea name="message" id="message"></textarea>
+     <a type="submit" href="#send">Send Message</a>
+    </form>
    </div>
    <div class="solid-line"></div>
+   <h3 class="center">Things I love about you</h3>
+   <ul>
+    <li>Pretty</li>
+    <li>Deligent</li>
+    <li>Smart</li>
+   </ul>
   </div>
+  <section id="send">
+   <h2 class="send-sent center">You're message has been sent!</h2>
+   <p class="send-message center">Thanks for messaging!</p>
+  </section>
  </main>
 
 </body>
