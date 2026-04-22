@@ -36,7 +36,53 @@ li {
  display: block;
  max-width: 120px;
  width: 100%;
- margin: 0 auto;
+ margin: 0 auto 10px auto;
  height: auto;
  border-radius: 50%;
+}
+
+.greet-headline {
+ font-size: 1.2rem;
+ margin-bottom: 10px;
+}
+
+.solid-line {
+ height: 2px;
+ background-color: hsl(120, 50%, 35%);
+}
+
+.input-message-box {
+ margin: 10px 0;
+}
+
+.input-message-box label {
+ display: block;
+ font-size: 1.1rem;
+ margin-bottom: 0.2em;
+ font-weight: 600;
+}
+
+.input-message-box textarea {
+ width: 100%;
+ padding: 10px;
+ resize: vertical;
+ outline: none;
+ border: none;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-message-box textarea::placeholder {
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-message-box a {
+ display: block;
+ text-decoration: none;
+ text-align: center;
+ border-radius: 10px;
+ color: darkgreen;
+ background-color: hsl(60, 100%, 50%);
+ width: 25%;
+ padding: 10px;
+ margin: 10px auto 0 auto;
 }
