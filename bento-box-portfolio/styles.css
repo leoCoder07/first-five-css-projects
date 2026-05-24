@@ -106,10 +106,58 @@ main {
  text-align: right;
 }
 
+.tech-stack-card {
+ position: relative;
+ background-color: aliceblue;
+}
+
 .tech-stack-card h2 {
  margin-bottom: 0.5em;
 }
 
 .tech-stack-card ul {
  line-height: 1.6em;
+}
+
+.tech-stack-card img {
+ position: absolute;
+}
+
+.html-logo {
+ left: 10%;
+ bottom: 15%;
+ width: 45px;
+ transform: rotate(10deg);
+}
+.css-logo {
+ width: 55px;
+ left: 28%;
+ bottom: 20%;
+ transform: rotate(-10deg);
+}
+.js-logo {
+ width: 55px;
+ left: 48%;
+ bottom: 10%;
+ transform: rotate(15deg);
+}
+.php-logo {
+ width: 85px;
+ left: 48%;
+ top: 40%;
+ transform: rotate(-15deg);
+}
+.mysql-logo {
+ width: 65px;
+ right: 10%;
+}
+.git-logo {
+ width: 55px;
+ bottom: 8%;
+ right: 8%;
+}
+.github-logo {
+ width: 40px;
+ right: 8%;
+ top: 35%;
 }
