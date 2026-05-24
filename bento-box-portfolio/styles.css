@@ -68,6 +68,7 @@ main {
  z-index: 1;
 
  transition: opacity 0.3s ease-in-out;
+ filter: drop-shadow(-5px 5px 10px rgba(0, 0, 0, 0.2));
 }
 
 .img-cry {
@@ -236,4 +237,16 @@ main {
  background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
+}
+
+.currently-card {
+ display: grid;
+ grid-template-rows: 1fr auto;
+}
+.currently-card ul {
+ font-size: 2.4rem;
+ text-align: right;
+ line-height: 1.4em;
+ letter-spacing: 0.4em;
+ font-weight: 500;
 }
