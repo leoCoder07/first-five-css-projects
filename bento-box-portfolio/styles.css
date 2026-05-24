@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 *,
 *::before,
 *::after {
@@ -8,8 +10,54 @@
 
 :root {
  --body-bg-color: ;
+ --font-family: "Montserrat", sans-serif;
 }
 
 body {
  min-height: 100vh;
+ font-family: var(--font-family);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+li {
+ list-style: none;
+}
+
+main {
+ display: grid;
+ grid-auto-columns: 300px;
+ grid-auto-rows: 300px;
+ gap: 1rem;
+ grid-template-areas:
+  "box-1 box-1 box-3 box-3"
+  "box-1 box-1 box-2 box-4"
+  "box-5 box-5 box-6 box-6";
+ margin: 10rem 0;
+}
+
+.box {
+ background-color: gray;
+ padding: 1em;
+ border-radius: 15px;
+}
+
+.hero-card {
+ display: flex;
+
+ position: relative;
+ overflow: visible;
+}
+
+.hero-card img {
+ position: absolute;
+ bottom: 0;
+ right: -23%;
+ max-width: 650px;
+}
+
+.hero-card .img-cut {
+ width: 1300px;
+ border-radius: 40% 0% 0% 0%;
 }
