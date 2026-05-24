@@ -38,7 +38,7 @@ main {
  grid-template-areas:
   "box-1 box-1 box-3 box-3"
   "box-1 box-1 box-2 box-4"
-  "box-5 box-5 box-6 box-6";
+  "box-5 box-6 box-6 music-bg";
  margin: 10rem 0;
 }
 
@@ -55,17 +55,30 @@ main {
  overflow: visible;
 }
 
-.hero-card img {
- position: absolute;
- bottom: 0;
- right: -23%;
- max-width: 650px;
+.hero-card .img-container {
+ position: relative;
+ width: 1300px;
 }
 
-.hero-card .img-cut {
- width: 1300px;
- border-radius: 80%;
- /* background-color: red; */
+.img-container img {
+ position: absolute;
+ max-width: 400px;
+ bottom: -2.4%;
+ right: -17%;
+ z-index: 1;
+
+ transition: opacity 0.3s ease-in-out;
+}
+
+.img-cry {
+ opacity: 0;
+}
+
+.img-container:hover .img-smile {
+ opacity: 0;
+}
+.img-container:hover .img-cry {
+ opacity: 1;
 }
 
 .hero-info-side {
@@ -160,4 +173,67 @@ main {
  width: 40px;
  right: 8%;
  top: 35%;
+}
+
+.github-stats-card {
+ display: grid;
+ grid-template-rows: auto auto 1fr auto;
+ gap: 0.5em;
+ overflow: auto;
+}
+
+.stats-container {
+ display: grid;
+ grid-template-columns: repeat(5, 45px);
+ grid-template-rows: repeat(2, 45px);
+ grid-auto-rows: 45px;
+ gap: 10px;
+}
+
+.stats-container span {
+ display: block;
+}
+
+.stats-box {
+ background-color: white;
+ border-radius: 10px;
+}
+
+.stats-box.a {
+ background-color: black;
+}
+
+.social-links-card {
+ display: grid;
+ grid-template-rows: auto 1fr auto;
+ position: relative;
+ overflow: hidden;
+}
+
+.social-links-card h2 {
+ margin-bottom: 0.5em;
+}
+
+.social-links-card ul {
+ line-height: 2.2em;
+ font-size: 1.4rem;
+ font-weight: 500;
+}
+
+.social-links-card i {
+ font-size: 2.3rem;
+ vertical-align: middle;
+}
+
+.social-links-card .link-logo {
+ position: absolute;
+ right: -30px;
+ bottom: -30px;
+}
+
+.music-bg {
+ background-image: url(https://media1.tenor.com/m/jtFVWq7u5g8AAAAd/zeiii.gif);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
 }
