@@ -1,63 +1,66 @@
-.shining-box {
- position: relative;
- width: 200px;
- height: 100px;
- background-color: #1a1a1a; /* Your card's inner background */
- border-radius: 10px;
+*,
+*::before,
+*::after {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+:root {
+ --bg-color: whitesmoke;
+ --text-color: black;
+ --border-color: gray;
+ --circle-color: green;
+}
+
+.switch-theme-wrapper {
+ min-height: 100vh;
+ width: 100%;
+
+ background-color: var(--bg-color);
+ border: 1rem solid var(--border-color);
+
  display: flex;
  justify-content: center;
  align-items: center;
- color: white;
- font-family: sans-serif;
- font-weight: bold;
-
- margin: 0 auto;
-
- /* 1. Hide the outer parts of the spinning gradient */
- overflow: hidden;
 }
 
-/* The "Shine" Beam */
-.shining-box::before {
- content: "";
+input[type="checkbox"] {
  position: absolute;
- width: 250%; /* Needs to be larger than the box so it covers corners when rotating */
- height: 250%;
-
- /* 2. Create the shining light beam using a conic gradient */
- background: conic-gradient(
-  #00f2fe,
-  /* Light color 1 */ #4facfe,
-  transparent 100%
- );
-
- /* 3. Attach the rotation animation */
- animation: rotateShine 4s linear infinite;
- z-index: 1;
+ opacity: 0;
+ width: 0;
+ height: 0;
 }
 
-/* The Inner Mask (Covers the center so only the border is visible) */
-.shining-box::after {
- content: "";
- position: absolute;
- inset: 3px; /* This defines your border thickness (e.g., 3px) */
- background: #1a1a1a;
- border-radius: 8px; /* Slightly smaller than outer border-radius */
- z-index: 2;
-}
-
-/* Ensure the text stays on top of the background layers */
-.shining-box span {
+.theme-toggle-btn {
+ background-color: wheat;
+ width: 450px;
+ height: 200px;
+ padding: 15px;
+ border-radius: 100px;
+ cursor: pointer;
  position: relative;
- z-index: 3;
 }
 
-/* 4. The Animation Timeline */
-@keyframes rotateShine {
- 0% {
-  transform: rotate(0deg);
- }
- 100% {
-  transform: rotate(360deg);
- }
+.theme-toggle-btn .circle {
+ display: block;
+
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ left: 15px;
+ border-radius: 50%;
+ background-color: white;
+ height: 175px;
+ width: 180px;
+ transition: left 0.3s ease-in-out;
+}
+
+:root:has(.theme-toggle:checked) {
+ --bg-color: black;
+}
+
+.theme-toggle:checked ~ .switch-theme-wrapper .circle {
+ left: 255px;
+ background-color: gray;
 }

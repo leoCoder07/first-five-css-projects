@@ -9,17 +9,22 @@
 }
 
 :root {
- --body-bg-color: ;
+ --body-bg-color: #e9ecef;
  --font-family: "Montserrat", sans-serif;
+}
+
+:root:has(.class-switch-theme:checked) {
+ --body-bg-color: #391a04;
 }
 
 body {
  min-height: 100vh;
  font-family: var(--font-family);
  display: flex;
+ flex-direction: column;
  justify-content: center;
  align-items: center;
- background-color: #e9ecef;
+ background-color: var(--body-bg-color);
 }
 
 li {
@@ -29,6 +34,124 @@ li {
 a {
  text-decoration: none;
  color: black;
+}
+
+header {
+ padding: 2rem;
+ width: 100vw;
+ /* color:; */
+}
+
+.header-container {
+ background-color: #f3d5b5;
+ width: min(90%, 1262.4px);
+ padding: 1em;
+ border-radius: 15px;
+ box-shadow: 5px 5px #6e0d25;
+ margin: 0 auto;
+
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.header-container h2 {
+ color: #6a381f;
+}
+
+.bento-logo-frame {
+ display: grid;
+ grid-auto-columns: 15px;
+ grid-auto-rows: 15px;
+ gap: 2px;
+ grid-template-areas:
+  "bento-logo-box1 bento-logo-box2 bento-logo-box2"
+  "bento-logo-box1 bento-logo-box4 bento-logo-box5"
+  "bento-logo-box3 bento-logo-box3 bento-logo-box6";
+}
+
+.bento-logo-box {
+ border-radius: 5px;
+ background-color: gray;
+}
+
+.bento-logo-box1 {
+ background-color: #6a381f;
+}
+.bento-logo-box2 {
+ background-color: #48392a;
+}
+.bento-logo-box3 {
+ background-color: #972d07;
+}
+.bento-logo-box4 {
+ background-color: #ffb20f;
+}
+.bento-logo-box5 {
+ background-color: #656d4a;
+}
+.bento-logo-box6 {
+ background-color: #9097c0;
+}
+
+.theme-toggle-wrapper {
+ width: 206.733px;
+ display: grid;
+ justify-content: flex-end;
+}
+
+.theme-toggle-wrapper .switch-theme-btn {
+ display: flex;
+ justify-content: flex-end;
+ height: 35px;
+ width: 120px;
+ border: 2px solid;
+ border-radius: 15px;
+ text-align: right;
+ padding: 5px;
+ background-color: #dcab6b;
+ cursor: pointer;
+ position: relative;
+
+ overflow: hidden;
+}
+
+.switch-theme-btn .theme-indicator {
+ position: absolute;
+ z-index: 1;
+ inset: 0;
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+}
+
+.light-mode,
+.dark-mode {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 1.2rem;
+}
+
+.light-mode {
+ color: #ffffb3;
+}
+
+.dark-mode {
+ color: #ffffb3;
+}
+
+.switch-theme-btn .circle {
+ display: block;
+ width: 50%;
+ height: 100%;
+ background-color: #f5d7bd;
+ border-radius: 13px;
+ z-index: 1;
+}
+
+.class-switch-theme:checked ~ label {
+ background-color: #6a381f;
+ justify-content: flex-start;
 }
 
 main {
@@ -41,7 +164,7 @@ main {
   "box-1 box-1 box-2 box-4"
   "box-5 quote box-6 box-6"
   "hobbies hobbies hobbies music";
- margin: 10rem 0;
+ margin: 3rem 0;
 }
 
 .box {
