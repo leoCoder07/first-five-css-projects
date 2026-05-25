@@ -1,98 +1,63 @@
-*,
-*::before,
-*::after {
- box-sizing: border-box;
- margin: 0;
-}
-
-.hero-container {
- font-family: monospace;
- font-size: 2.5rem;
+.shining-box {
+ position: relative;
+ width: 200px;
+ height: 100px;
+ background-color: #1a1a1a; /* Your card's inner background */
+ border-radius: 10px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: white;
+ font-family: sans-serif;
  font-weight: bold;
- display: inline-block;
- /* line-height: 1.2; */
-}
 
-.typing-text {
- display: inline-block;
+ margin: 0 auto;
+
+ /* 1. Hide the outer parts of the spinning gradient */
  overflow: hidden;
- white-space: nowrap;
- border-right: 0.15em solid currentColor; /* Cursor matches the text color */
- width: 0; /* Starts hidden */
- vertical-align: bottom;
-
- /* 
-     12 seconds total loop. 
-     Instead of steps(4) on the main animation, we apply the stepping 
-     inside the keyframes so the color changes don't "step".
-  */
- animation: dynamic-typing 12s infinite;
 }
 
-/* 
-   THE TIMELINE (12 seconds total)
-   0s - 4s: Black (Type, Hold, Delete)
-   4s - 8s: Dark Brown (Type, Hold, Delete)
-   8s - 12s: Dark Yellow (Type, Hold, Delete)
-*/
-@keyframes dynamic-typing {
- /* --- CYCLE 1: BLACK --- */
+/* The "Shine" Beam */
+.shining-box::before {
+ content: "";
+ position: absolute;
+ width: 250%; /* Needs to be larger than the box so it covers corners when rotating */
+ height: 250%;
+
+ /* 2. Create the shining light beam using a conic gradient */
+ background: conic-gradient(
+  #00f2fe,
+  /* Light color 1 */ #4facfe,
+  transparent 100%
+ );
+
+ /* 3. Attach the rotation animation */
+ animation: rotateShine 4s linear infinite;
+ z-index: 1;
+}
+
+/* The Inner Mask (Covers the center so only the border is visible) */
+.shining-box::after {
+ content: "";
+ position: absolute;
+ inset: 3px; /* This defines your border thickness (e.g., 3px) */
+ background: #1a1a1a;
+ border-radius: 8px; /* Slightly smaller than outer border-radius */
+ z-index: 2;
+}
+
+/* Ensure the text stays on top of the background layers */
+.shining-box span {
+ position: relative;
+ z-index: 3;
+}
+
+/* 4. The Animation Timeline */
+@keyframes rotateShine {
  0% {
-  width: 0;
-  color: #000000;
-  animation-timing-function: steps(4, end);
+  transform: rotate(0deg);
  }
- 10% {
-  width: 4ch;
-  color: #000000;
- } /* Typed out */
- 23% {
-  width: 4ch;
-  color: #000000;
-  animation-timing-function: steps(4, end);
- } /* Hold */
- 33% {
-  width: 0;
-  color: #000000;
- } /* Deleted */
-
- /* --- CYCLE 2: DARK BROWN --- */
- 34% {
-  width: 0;
-  color: #5c4033;
-  animation-timing-function: steps(4, end);
- } /* Switch color instantly */
- 44% {
-  width: 4ch;
-  color: #5c4033;
- } /* Typed out */
- 57% {
-  width: 4ch;
-  color: #5c4033;
-  animation-timing-function: steps(4, end);
- } /* Hold */
- 67% {
-  width: 0;
-  color: #5c4033;
- } /* Deleted */
-
- /* --- CYCLE 3: DARK YELLOW --- */
- 68% {
-  width: 0;
-  color: #b58900;
-  animation-timing-function: steps(4, end);
- } /* Switch color instantly */
- 78% {
-  width: 4ch;
-  color: #b58900;
- } /* Typed out */
- 90% {
-  width: 4ch;
-  color: #b58900;
-  animation-timing-function: steps(4, end);
- } /* Hold */
  100% {
-  width: 0;
-  color: #b58900;
- } /* Deleted */
+  transform: rotate(360deg);
+ }
 }

@@ -56,6 +56,55 @@ main {
  position: relative;
  overflow: visible;
  background: #dcab6b;
+
+ position: relative;
+}
+
+.border-glow-wrapper {
+ inset: 0;
+ position: absolute;
+ border-radius: 15px;
+ z-index: 1;
+ overflow: hidden;
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.border-glow-wrapper::before {
+ content: "";
+ position: absolute;
+ width: 250%;
+ height: 250%;
+
+ background: conic-gradient(
+  from 0deg,
+  transparent 40%,
+  #ffffb3,
+  #d7f75b,
+  transparent 50%
+ );
+
+ animation: rotateShine 3s ease-in-out infinite;
+}
+
+.border-glow-wrapper::after {
+ content: "";
+ position: absolute;
+ inset: 0.3em;
+ border-radius: 13px;
+ background-color: #dcab6b;
+}
+
+@keyframes rotateShine {
+ 100% {
+  transform: rotate(360deg);
+ }
+}
+
+.hero-card aside {
+ z-index: 1;
 }
 
 .hero-card .img-container {
