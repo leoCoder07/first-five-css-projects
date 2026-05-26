@@ -1,66 +1,51 @@
-*,
-*::before,
-*::after {
- box-sizing: border-box;
- margin: 0;
- padding: 0;
+/* 1. The outer container sets the size and the 3D perspective depth */
+.flip-card {
+ background-color: transparent;
+ width: 300px;
+ height: 500px;
+ perspective: 1000px;
 }
 
-:root {
- --bg-color: whitesmoke;
- --text-color: black;
- --border-color: gray;
- --circle-color: green;
-}
-
-.switch-theme-wrapper {
- min-height: 100vh;
+/* 2. The inner container handles the actual rotation animation */
+.flip-card-inner {
+ position: relative;
  width: 100%;
+ height: 100%;
+ text-align: center;
+ transition: transform 0.6s;
+ transform-style: preserve-3d; /* Tells children to position themselves in 3D space */
+}
 
- background-color: var(--bg-color);
- border: 1rem solid var(--border-color);
+/* 3. Flip the inner container when hovering over the outer container */
+.flip-card-inner {
+ transform: rotateY(-120deg);
+}
 
+/* 4. Common styling for both front and back faces */
+.flip-card-front,
+.flip-card-back {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ -webkit-backface-visibility: hidden; /* Safari support */
+ backface-visibility: hidden; /* Hides the element when it's turned away */
  display: flex;
+ flex-direction: column;
  justify-content: center;
  align-items: center;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-input[type="checkbox"] {
- position: absolute;
- opacity: 0;
- width: 0;
- height: 0;
+/* 5. Style the front side */
+.flip-card-front {
+ background-color: #3498db;
+ color: white;
 }
 
-.theme-toggle-btn {
- background-color: wheat;
- width: 450px;
- height: 200px;
- padding: 15px;
- border-radius: 100px;
- cursor: pointer;
- position: relative;
-}
-
-.theme-toggle-btn .circle {
- display: block;
-
- position: absolute;
- top: 50%;
- transform: translateY(-50%);
- left: 15px;
- border-radius: 50%;
- background-color: white;
- height: 175px;
- width: 180px;
- transition: left 0.3s ease-in-out;
-}
-
-:root:has(.theme-toggle:checked) {
- --bg-color: black;
-}
-
-.theme-toggle:checked ~ .switch-theme-wrapper .circle {
- left: 255px;
- background-color: gray;
+/* 6. Style the back side (pre-rotated so it faces away initially) */
+.flip-card-back {
+ background-color: #2ecc71;
+ color: white;
+ /* Starts flipped so it shows correctly when the container spins */
 }
