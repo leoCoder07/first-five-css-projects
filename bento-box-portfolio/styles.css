@@ -730,3 +730,218 @@ footer a {
  color: var(--footer-links-color);
  text-decoration: underline;
 }
+
+@media (width < 1340px) {
+ main {
+  width: min(85%, 1262.4px);
+
+  grid-template-columns: 1fr;
+  grid-template-areas:
+   "box-1 box-1 box-1"
+   "box-3 box-3 box-2"
+   "box-4 box-5 quote"
+   "box-6 box-6 music"
+   "hobbies hobbies hobbies";
+ }
+
+ .img-container,
+ .hero-info-side {
+  flex: 1;
+ }
+ .hero-info-side {
+  flex: 4;
+ }
+
+ .border-glow-wrapper::before {
+  width: 1000px;
+  height: 300%;
+ }
+
+ .img-container img {
+  width: 250px;
+  right: -5%;
+  bottom: -5%;
+ }
+
+ .stats-container {
+  grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+ }
+}
+
+@media (width < 1153px) {
+ .hero-info-side h2 {
+  font-size: 1.3em;
+ }
+ .hero-info-side .circle {
+  width: 18px;
+  height: 18px;
+ }
+ .hero-info-side h1 {
+  font-size: 5rem;
+ }
+}
+
+@media (width < 1135px) {
+ main {
+  grid-template-areas:
+   "box-1 box-1"
+   "box-3 box-3"
+   "box-2 box-4 "
+   "box-6 box-6"
+   "box-5 music"
+   "quote quote"
+   "hobbies hobbies";
+ }
+
+ .img-container {
+  flex: 2;
+ }
+
+ .hero-info-side h2 {
+  font-size: 1.2em;
+ }
+ .hero-info-side p {
+  font-size: 0.9rem;
+ }
+ .hero-info-side .circle {
+  width: 14px;
+  height: 14px;
+ }
+ .hero-info-side h1 {
+  font-size: 4rem;
+ }
+
+ .text-container ul {
+  font-size: 1.5rem;
+ }
+}
+
+@media (width < 768px) {
+ .img-container {
+  flex: 3;
+ }
+
+ .hero-info-side h2 {
+  font-size: 1.2em;
+ }
+ .hero-info-side p {
+  font-size: 0.8rem;
+ }
+ .hero-info-side .circle {
+  width: 14px;
+  height: 14px;
+ }
+ .hero-info-side h1 {
+  font-size: 4rem;
+ }
+
+ .text-container {
+  grid-row: span 3;
+ }
+
+ .text-container ul {
+  font-size: 1.2rem;
+ }
+
+ .hobby-2 {
+  grid-column: span 2;
+ }
+ .hobby-3 {
+  grid-column: span 2;
+ }
+ .hobby-6 {
+  grid-column: span 2;
+ }
+
+ .tech-stack-card ul {
+  font-size: 0.8rem;
+ }
+
+ .tech-stack-card img {
+  width: 44px;
+ }
+
+ .currently-card ul {
+  font-size: 2rem;
+ }
+
+ .social-links-card ul {
+  font-size: 1.2rem;
+ }
+}
+
+@media (width < 640px) {
+ main {
+  grid-template-areas:
+   "box-1   box-1  "
+   "box-3   box-3  "
+   "box-2   box-2  "
+   "box-4   box-4  "
+   "box-6   box-6  "
+   "music   music  "
+   "box-5   box-5  "
+   "quote   quote  "
+   "hobbies hobbies";
+ }
+
+ .img-container img {
+  width: 190px;
+ }
+
+ .header-container {
+  flex-wrap: wrap;
+  gap: 1em;
+ }
+ .theme-toggle-wrapper {
+  flex: 1;
+  /* justify-content: flex-start; */
+ }
+
+ .hero-info-side h2 {
+  font-size: 0.8rem;
+ }
+ .hero-info-side h1 {
+  font-size: 3rem;
+ }
+ .hero-info-side p {
+  font-size: 0.5rem;
+ }
+
+ .img-container {
+  flex: 4.6;
+ }
+}
+
+@media (width <= 512px) {
+ .hero-info-side h2 {
+  font-size: 0.5rem;
+ }
+ .hero-info-side .circle {
+  width: 8px;
+  height: 8px;
+ }
+ .hero-info-side h1 {
+  font-size: 2rem;
+ }
+
+ .featured-project-card h2 {
+  font-size: 1rem;
+ }
+ .featured-project-card h1 {
+  font-size: 1.7rem;
+ }
+ .featured-project-card p {
+  font-size: 0.7rem;
+ }
+
+ .currently-card h2 {
+  font-size: 1rem;
+ }
+ .currently-card ul {
+  font-size: 1.6rem;
+ }
+
+ .text-container ul {
+  font-size: 0.9rem;
+ }
+}
