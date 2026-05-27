@@ -30,6 +30,25 @@
  --img-display-group1: inline;
  --img-display-group2: none;
 
+ /* 2 - featured-product card */
+ --fd-product-bg-color: #9ba2ff;
+ --fd-product-text-color: #000000;
+
+ /* 3 - tech-stack card */
+ --ts-bg-color: aliceblue;
+ --ts-text-color: #000000;
+
+ /* 4 - github-stats card */
+ --gs-bg-color: #34a0a4;
+ --gs-text-color: #000000;
+ --gs-stats-box-color: white;
+ --gs-stats-box-active-color: #9ef01a;
+ --gs-stats-box-active-half-color: #9ef01aab;
+
+ /* 5 - social-links card */
+ --sl-bg-color: #e0aaff;
+ --sl-text-color: #000000;
+
  /* footer */
  --footer-text-color: black;
  --footer-links-color: darkblue;
@@ -52,6 +71,25 @@
  --hero-card-animation-color3: #ffbf01;
  --img-display-group1: none;
  --img-display-group2: inline;
+
+ /* 2 - featured-product card */
+ --fd-product-bg-color: #3c096c;
+ --fd-product-text-color: #c8b6ff;
+
+ /* 3 - tech-stack card */
+ --ts-bg-color: #caf0f8;
+ --ts-text-color: #133c55;
+
+ /* 4 - github-stats card */
+ --gs-bg-color: #52b788;
+ --gs-text-color: #081c15;
+ --gs-stats-box-color: #c7f9cc;
+ --gs-stats-box-active-color: #ccff33;
+ --gs-stats-box-active-half-color: #9ef01a;
+
+ /* 5 - social-links card */
+ --sl-bg-color: #913bc3;
+ --sl-text-color: #27003d;
 
  /* footer */
  --footer-text-color: lightgray;
@@ -505,7 +543,8 @@ main {
  grid-template-rows: auto auto 1fr auto auto;
  gap: 0.5em;
 
- background-color: #9ba2ff;
+ background-color: var(--fd-product-bg-color);
+ color: var(--fd-product-text-color);
 }
 
 .featured-project-card h1 {
@@ -521,11 +560,13 @@ main {
 
 .featured-project-card a {
  text-align: right;
+ color: var(--fd-product-text-color);
 }
 
 .tech-stack-card {
  position: relative;
- background-color: aliceblue;
+ background-color: var(--ts-bg-color);
+ color: var(--ts-text-color);
 }
 
 .tech-stack-card h2 {
@@ -584,7 +625,8 @@ main {
  grid-template-rows: auto auto 1fr auto;
  gap: 0.5em;
  overflow: auto;
- background: #34a0a4;
+ background: var(--gs-bg-color);
+ color: var(--gs-text-color);
 }
 
 .stats-container {
@@ -600,16 +642,16 @@ main {
 }
 
 .stats-box {
- background-color: white;
+ background-color: var(--gs-stats-box-color);
  border-radius: 10px;
 }
 
 .stats-box.a {
- background-color: #9ef01a;
+ background-color: var(--gs-stats-box-active-color);
 }
 
 .stats-box.a-half {
- background-color: #9ef01aab;
+ background-color: var(--gs-stats-box-active-half-color);
 }
 
 .social-links-card {
@@ -618,7 +660,8 @@ main {
  position: relative;
  overflow: hidden;
 
- background: #e0aaff;
+ background: var(--sl-bg-color);
+ color: var(--sl-text-color);
 }
 
 .social-links-card h2 {
@@ -629,6 +672,9 @@ main {
  line-height: 2.2em;
  font-size: 1.4rem;
  font-weight: 500;
+}
+.social-links-card a {
+ color: var(--sl-text-color);
 }
 
 .social-links-card i {
